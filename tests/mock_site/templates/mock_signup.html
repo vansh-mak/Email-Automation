@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Google Account Registration</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f8fafc; color: #1e293b; padding: 40px; margin: 0; }
+    .card { max-width: 500px; margin: 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); padding: 32px; }
+    h1 { font-size: 22px; margin-bottom: 8px; color: #0f172a; }
+    p.subtitle { color: #64748b; margin-top: 0; margin-bottom: 24px; font-size: 14px; }
+    .step { display: none; }
+    .step.active { display: block; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; color: #334155; }
+    input[type="text"], input[type="password"], select { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; }
+    .radio-group { margin-bottom: 16px; }
+    .radio-option { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 14px; }
+    .btn-group { margin-top: 24px; display: flex; justify-content: flex-end; gap: 12px; }
+    button { background: #1a73e8; color: #ffffff; border: none; padding: 10px 18px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; }
+    button:hover { background: #1557b0; }
+    button.secondary { background: #f1f3f4; color: #3c4043; }
+    button.secondary:hover { background: #e8eaed; }
+    .challenge-box { background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+    .terms-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; font-size: 13px; color: #475569; max-height: 120px; overflow-y: auto; margin-bottom: 16px; }
+    .success-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 24px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Step 1: NAME -->
+    <div id="step-name" class="step active">
+      <h1>Create a Google Account</h1>
+      <p class="subtitle">Enter your name</p>
+      <div class="form-group">
+        <label for="first_name">First name</label>
+        <input type="text" id="first_name" name="first_name" required autocomplete="off" />
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last name</label>
+        <input type="text" id="last_name" name="last_name" required autocomplete="off" />
+      </div>
+      <div class="btn-group">
+        <button type="button" id="btn-step-name-next" role="button">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 2: BIRTHDAY & GENDER -->
+    <div id="step-dob" class="step">
+      <h1>Basic information</h1>
+      <p class="subtitle">Enter your birthday and gender</p>
+      <div style="display: flex; gap: 10px;" class="form-group">
+        <div style="flex: 1;">
+          <label for="dob_month">Month</label>
+          <select id="dob_month" name="dob_month">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+          </select>
+        </div>
+        <div style="flex: 1;">
+          <label for="dob_day">Day</label>
+          <input type="text" id="dob_day" name="dob_day" placeholder="DD" />
+        </div>
+        <div style="flex: 1;">
+          <label for="dob_year">Year</label>
+          <input type="text" id="dob_year" name="dob_year" placeholder="YYYY" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="rather not say">Rather not say</option>
+        </select>
+      </div>
+      <div class="btn-group">
+        <button type="button" id="btn-step-dob-next" role="button">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 3: USERNAME -->
+    <div id="step-username" class="step">
+      <h1>Choose your Gmail address</h1>
+      <p class="subtitle">Pick a Gmail address or create your own</p>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" id="radio_opt1" name="gmail_choice" value="alexhamster.suggested" checked />
+          <label for="radio_opt1">alexhamster.suggested@gmail.com</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" id="radio_opt2" name="gmail_choice" value="alex.h.alternate" />
+          <label for="radio_opt2">alex.h.alternate@gmail.com</label>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="button" id="btn-step-username-next" role="button">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 4: PASSWORD -->
+    <div id="step-password" class="step">
+      <h1>Create a strong password</h1>
+      <p class="subtitle">Create a strong password with a mix of letters and numbers</p>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="Passwd" autocomplete="off" />
+      </div>
+      <div class="form-group">
+        <label for="confirm_password">Confirm</label>
+        <input type="password" id="confirm_password" name="PasswdAgain" autocomplete="off" />
+      </div>
+      <div class="btn-group">
+        <button type="button" id="btn-step-password-next" role="button">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 5: PHONE VERIFICATION -->
+    <div id="step-phone" class="step">
+      <h1>Confirm you’re not a robot</h1>
+      <p class="subtitle">Get a verification code sent to your phone</p>
+      <div class="challenge-box">
+        <label for="verification_code">Enter 6-digit verification code (Use 123456)</label>
+        <input type="text" id="verification_code" name="verification_code" placeholder="123456" />
+      </div>
+      <div class="btn-group">
+        <button type="button" id="btn-verify-challenge" role="button">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 6: RECOVERY INFORMATION -->
+    <div id="step-recovery" class="step">
+      <h1>Add recovery email</h1>
+      <p class="subtitle">Google will use this address if there's unusual activity</p>
+      <div id="recovery-box" class="form-group">
+        <label for="recovery_email">Recovery email address</label>
+        <input type="text" id="recovery_email" name="recovery_email" placeholder="Optional" />
+      </div>
+      <div class="btn-group">
+        <button type="button" class="secondary" id="btn-skip-recovery">Skip</button>
+      </div>
+    </div>
+
+    <!-- Step 7: ACCOUNT REVIEW & TERMS -->
+    <div id="step-terms" class="step">
+      <h1>Privacy and Terms</h1>
+      <p class="subtitle">To create a Google Account, you’ll need to agree to the Terms of Service</p>
+      <div id="terms-box" class="terms-box">
+        By selecting 'I agree', you agree to Google's Terms of Service and Privacy Policy.
+      </div>
+      <div class="btn-group">
+        <button type="button" id="btn-agree-terms" role="button">I agree</button>
+      </div>
+    </div>
+
+    <!-- Step 8: SELFIE VERIFICATION -->
+    <div id="step-selfie" class="step">
+      <h1>Selfie verification</h1>
+      <p class="subtitle">Optional security verification check</p>
+      <div class="btn-group">
+        <button type="button" class="secondary" id="btn-skip-selfie">Not now</button>
+      </div>
+    </div>
+
+    <!-- Step 9: COMPLETED -->
+    <div id="step-completed" class="step">
+      <div class="success-box">
+        <h2 style="color: #166534; margin: 0 0 8px 0;">🎉 Welcome!</h2>
+        <p style="color: #15803d; margin: 0;">Account created successfully.</p>
+        <p style="margin-top: 12px; font-weight: 600;" id="welcome-username"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedUsername = 'alexhamster.suggested';
+
+    function goTo(hideId, showId) {
+      document.getElementById(hideId).classList.remove('active');
+      document.getElementById(showId).classList.add('active');
+    }
+
+    document.getElementById('btn-step-name-next').addEventListener('click', () => goTo('step-name', 'step-dob'));
+    document.getElementById('btn-step-dob-next').addEventListener('click', () => goTo('step-dob', 'step-username'));
+
+    document.getElementById('btn-step-username-next').addEventListener('click', () => {
+      const checked = document.querySelector('input[name="gmail_choice"]:checked');
+      if (checked) selectedUsername = checked.value;
+      goTo('step-username', 'step-password');
+    });
+
+    document.getElementById('btn-step-password-next').addEventListener('click', () => goTo('step-password', 'step-phone'));
+
+    document.getElementById('btn-verify-challenge').addEventListener('click', () => {
+      const code = document.getElementById('verification_code').value.trim();
+      if (code === '123456') {
+        goTo('step-phone', 'step-recovery');
+      } else {
+        alert('Invalid code! Enter 123456.');
+      }
+    });
+
+    document.getElementById('btn-skip-recovery').addEventListener('click', () => goTo('step-recovery', 'step-terms'));
+    document.getElementById('btn-agree-terms').addEventListener('click', () => goTo('step-terms', 'step-selfie'));
+    
+    document.getElementById('btn-skip-selfie').addEventListener('click', () => {
+      document.getElementById('welcome-username').textContent = `Account: ${selectedUsername}@gmail.com`;
+      goTo('step-selfie', 'step-completed');
+    });
+  </script>
+</body>
+</html>

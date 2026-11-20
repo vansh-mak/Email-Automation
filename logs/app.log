@@ -1,0 +1,160 @@
+2026-11-10 19:13:23,615 [INFO] EmailAutomation: Initializing application and database tables...
+2026-11-10 19:13:23,643 [INFO] EmailAutomation: EmailAutomation started on http://127.0.0.1:8000
+2026-11-10 19:45:55,092 [INFO] services.orchestrator: Starting orchestration for job '969467cb-4b0b-4b91-b1f2-8142c0bf78c1' (User: alexhamster)...
+2026-11-10 19:45:55,135 [INFO] automation.browser: Launching Chromium browser (headless=False)...
+2026-11-10 19:45:59,136 [INFO] automation.signup: Navigating to signup URL: https://accounts.google.com/lifecycle/steps/signup/name?authuser=0&continue=http://support.google.com/mail/answer/56256?hl%3Den&dsh=S1494061071:1794320132225817&ec=GAlAdQ&flowEntry=SignUp&flowName=GlifWebSignIn&hl=en&rip=1&TL=AAxq8nsy2YoleI31AfF3whNzUGdkm500XofVGJ1LY8GjsxmAk5ZAtH0TJAPy5K2E
+2026-11-10 19:46:04,871 [WARNING] services.orchestrator: Registration workflow for job '969467cb-4b0b-4b91-b1f2-8142c0bf78c1' did not confirm success.
+2026-11-10 19:46:05,354 [INFO] automation.browser: Browser session resources released.
+2026-11-10 22:53:05,726 [INFO] EmailAutomation: Application shutting down...
+2026-11-13 19:04:48,823 [INFO] EmailAutomation: Initializing application and database tables...
+2026-11-13 19:04:48,829 [INFO] EmailAutomation: EmailAutomation started on http://127.0.0.1:8000
+2026-11-13 19:06:53,034 [INFO] services.orchestrator: Starting orchestration for job '043004a0-e92b-4f80-9de5-c58404af2e74' (Initial User: alex12)...
+2026-11-13 19:06:53,060 [INFO] automation.browser: Launching Chromium browser (headless=False)...
+2026-11-13 19:06:55,508 [INFO] automation.signup: Initiating registration assistance workflow at URL: https://accounts.google.com/signup
+2026-11-13 19:06:58,344 [INFO] automation.signup: [Step Loop 1] Detected page state: NAME (URL: https://accounts.google.com/lifecycle/steps/signup/name?dsh=S-200053046:1794577016513854&flowEntry=SignUp&flowName=GlifWebSignIn&TL=AAxq8nu5AAQhcMPp2LgLFUCgAv5_0A1p76PZaH19gv267t-6t--YK66Bakf6JkIy&continue=https://accounts.google.com/ManageAccount?nc%3D1)
+2026-11-13 19:06:58,354 [INFO] automation.signup: Executing Step: NAME
+2026-11-13 19:06:59,808 [INFO] automation.signup: [Step Loop 2] Detected page state: PHONE_VERIFICATION (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nu5AAQhcMPp2LgLFUCgAv5_0A1p76PZaH19gv267t-6t--YK66Bakf6JkIy&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-200053046%3A1794577016513854&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-13 19:06:59,823 [INFO] automation.signup: Phone verification challenge detected for job '043004a0-e92b-4f80-9de5-c58404af2e74'. Pausing for human intervention.
+2026-11-13 19:08:43,584 [INFO] services.orchestrator: Starting orchestration for job 'a3e517cd-fdb2-49db-a1e0-ea4245646a36' (Initial User: alex12)...
+2026-11-13 19:08:43,616 [INFO] automation.browser: Launching Chromium browser (headless=False)...
+2026-11-13 19:08:45,158 [INFO] automation.signup: Initiating registration assistance workflow at URL: https://accounts.google.com/signup
+2026-11-13 19:08:47,484 [INFO] automation.signup: [Step Loop 1] Detected page state: NAME (URL: https://accounts.google.com/lifecycle/steps/signup/name?dsh=S337643526:1794577126170947&flowEntry=SignUp&flowName=GlifWebSignIn&TL=AAxq8nuderB64icPg0RAbk9vsKcp1iZYuIhRBSS6TAZtd5wnDh60RxDnx5WIrc2O&continue=https://accounts.google.com/ManageAccount?nc%3D1)
+2026-11-13 19:08:47,502 [INFO] automation.signup: Executing Step: NAME
+2026-11-13 19:08:49,092 [INFO] automation.signup: [Step Loop 2] Detected page state: PHONE_VERIFICATION (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuderB64icPg0RAbk9vsKcp1iZYuIhRBSS6TAZtd5wnDh60RxDnx5WIrc2O&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S337643526%3A1794577126170947&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-13 19:08:49,110 [INFO] automation.signup: Phone verification challenge detected for job 'a3e517cd-fdb2-49db-a1e0-ea4245646a36'. Pausing for human intervention.
+2026-11-13 19:09:28,101 [INFO] automation.signup: Job '043004a0-e92b-4f80-9de5-c58404af2e74' resumed after phone verification.
+2026-11-13 19:09:28,164 [ERROR] services.orchestrator: Unexpected error in orchestration workflow for job '043004a0-e92b-4f80-9de5-c58404af2e74': Page.wait_for_timeout: Target page, context or browser has been closed
+Traceback (most recent call last):
+  File "D:\Vansh\projects\Email_automation\services\orchestrator.py", line 63, in run_orchestrated_workflow
+    signup_success = await run_signup(page, job, update_status)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Vansh\projects\Email_automation\automation\signup.py", line 483, in run_signup
+    await handle_phone_verification_step(page, job, update_status_cb)
+  File "D:\Vansh\projects\Email_automation\automation\signup.py", line 330, in handle_phone_verification_step
+    await page.wait_for_timeout(1000)
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\async_api\_generated.py", line 21286, in wait_for_timeout
+    await self._impl_obj.wait_for_timeout(timeout=to_milliseconds(timeout))
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\_impl\_page.py", line 1149, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\_impl\_frame.py", line 929, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\_impl\_connection.py", line 78, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\_impl\_connection.py", line 636, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-11-13 19:09:28,663 [INFO] automation.browser: Browser session resources released.
+2026-11-14 19:13:02,819 [INFO] EmailAutomation: Initializing application and database tables...
+2026-11-14 19:13:02,838 [INFO] EmailAutomation: EmailAutomation started on http://127.0.0.1:8000
+2026-11-14 19:17:24,361 [INFO] services.orchestrator: Starting orchestration for job '6e5698ee-fb09-4c17-9988-35818d9bd6b0' (Initial User: alex12)...
+2026-11-14 19:17:24,399 [INFO] automation.browser: Launching Chromium browser (headless=False)...
+2026-11-14 19:17:28,171 [INFO] automation.signup: Initiating registration assistance workflow at URL: https://accounts.google.com/signup
+2026-11-14 19:17:30,431 [INFO] automation.signup: [Step Loop 1] Detected page state: NAME (URL: https://accounts.google.com/lifecycle/steps/signup/name?dsh=S-1020315206:1794664047621413&flowEntry=SignUp&flowName=GlifWebSignIn&TL=AAxq8ntH_MSQC196cZU3LAYGOzcFRNS9iJqf0j5oShGLd1O58YeIKo_d0gkjyUCo&continue=https://accounts.google.com/ManageAccount?nc%3D1)
+2026-11-14 19:17:30,445 [INFO] automation.signup: Executing Step: NAME
+2026-11-14 19:17:31,847 [INFO] automation.signup: [Step Loop 2] Detected page state: PHONE_VERIFICATION (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8ntH_MSQC196cZU3LAYGOzcFRNS9iJqf0j5oShGLd1O58YeIKo_d0gkjyUCo&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-1020315206%3A1794664047621413&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:17:31,859 [INFO] automation.signup: Phone verification challenge detected for job '6e5698ee-fb09-4c17-9988-35818d9bd6b0'. Pausing for human intervention.
+2026-11-14 19:25:17,190 [INFO] EmailAutomation: Application shutting down...
+2026-11-14 19:30:55,865 [INFO] EmailAutomation: Initializing application and database tables...
+2026-11-14 19:30:55,870 [INFO] EmailAutomation: EmailAutomation started on http://127.0.0.1:8000
+2026-11-14 19:32:55,513 [INFO] services.orchestrator: Starting orchestration for job '690d5d99-e8d9-42b9-8d03-094edba5c506' (Initial User: alexnothome12)...
+2026-11-14 19:32:55,571 [INFO] automation.browser: Launching Chromium browser (headless=False)...
+2026-11-14 19:32:57,126 [INFO] automation.signup: Initiating registration assistance workflow at URL: https://accounts.google.com/signup
+2026-11-14 19:33:00,070 [INFO] automation.signup: [Step Loop 1] Detected page state: NAME (URL: https://accounts.google.com/lifecycle/steps/signup/name?dsh=S-181304450:1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn&TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https://accounts.google.com/ManageAccount?nc%3D1)
+2026-11-14 19:33:00,080 [INFO] automation.signup: Executing Step: NAME
+2026-11-14 19:33:01,711 [INFO] automation.signup: [Step Loop 2] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:33:01,721 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-14 19:33:03,367 [INFO] automation.signup: [Step Loop 3] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:33:03,385 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-14 19:33:05,109 [INFO] automation.signup: [Step Loop 4] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:33:05,122 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-14 19:33:06,885 [INFO] automation.signup: [Step Loop 5] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:33:06,896 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-14 19:33:08,726 [INFO] automation.signup: [Step Loop 6] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:33:08,737 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-14 19:33:10,524 [INFO] automation.signup: [Step Loop 7] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:33:10,538 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-14 19:33:12,402 [INFO] automation.signup: [Step Loop 8] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:33:12,415 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-14 19:33:14,639 [INFO] automation.signup: [Step Loop 9] Detected page state: UNKNOWN (URL: https://accounts.google.com/lifecycle/steps/signup/username?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-14 19:33:14,648 [WARNING] automation.signup: Unrecognized page state at https://accounts.google.com/lifecycle/steps/signup/username?TL=AAxq8nuaAtHbmqZlk0_rvp6d3KcMq-KFc4qBeDIxbFsv8LaPghBt81QbQzpv4Y8c&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-181304450%3A1794664976444518&flowEntry=SignUp&flowName=GlifWebSignIn. Pausing for human intervention.
+2026-11-14 20:00:44,541 [INFO] EmailAutomation: Application shutting down...
+2026-11-16 20:41:43,356 [INFO] EmailAutomation: Initializing application and database tables...
+2026-11-16 20:41:43,377 [INFO] EmailAutomation: EmailAutomation started on http://127.0.0.1:8000
+2026-11-16 20:43:12,274 [INFO] services.orchestrator: Starting orchestration for job '647eba12-4160-4cfe-bb6c-141d85cef167' (Initial User: alexisnothome)...
+2026-11-16 20:43:12,361 [INFO] automation.browser: Launching Chromium browser (headless=False)...
+2026-11-16 20:43:16,435 [INFO] automation.signup: Initiating registration assistance workflow at URL: https://accounts.google.com/signup
+2026-11-16 20:43:18,819 [INFO] automation.signup: [Step Loop 1] Detected page state: NAME (URL: https://accounts.google.com/lifecycle/steps/signup/name?dsh=S587679512:1794841997814462&flowEntry=SignUp&flowName=GlifWebSignIn&TL=AAxq8nuXgJhrUhl4_8rAVOk_diNtyEQzsq_ISOjLBvpB9W0-pkz1VEwvHCIle3Z5&continue=https://accounts.google.com/ManageAccount?nc%3D1)
+2026-11-16 20:43:18,829 [INFO] automation.signup: Executing Step: NAME
+2026-11-16 20:43:20,294 [INFO] automation.signup: [Step Loop 2] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nuXgJhrUhl4_8rAVOk_diNtyEQzsq_ISOjLBvpB9W0-pkz1VEwvHCIle3Z5&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S587679512%3A1794841997814462&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-16 20:43:20,310 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-16 20:43:20,404 [ERROR] automation.signup: Month select not found. Selector: #dob_month
+2026-11-16 20:43:20,404 [ERROR] services.orchestrator: Unexpected error in orchestration workflow for job '647eba12-4160-4cfe-bb6c-141d85cef167': Month select missing for BIRTHDAY_GENDER step
+Traceback (most recent call last):
+  File "D:\Vansh\projects\Email_automation\services\orchestrator.py", line 63, in run_orchestrated_workflow
+    signup_success = await run_signup(page, job, update_status)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Vansh\projects\Email_automation\automation\signup.py", line 575, in run_signup
+    await handle_birthday_gender_step(page, signup_input)
+  File "D:\Vansh\projects\Email_automation\automation\signup.py", line 231, in handle_birthday_gender_step
+    raise RuntimeError("Month select missing for BIRTHDAY_GENDER step")
+RuntimeError: Month select missing for BIRTHDAY_GENDER step
+2026-11-16 20:43:20,825 [INFO] automation.browser: Browser session resources released.
+2026-11-16 22:06:40,227 [INFO] EmailAutomation: Application shutting down...
+2026-11-16 22:07:23,607 [INFO] EmailAutomation: Initializing application and database tables...
+2026-11-16 22:07:23,613 [INFO] EmailAutomation: EmailAutomation started on http://127.0.0.1:8000
+2026-11-16 22:08:12,003 [INFO] services.orchestrator: Starting orchestration for job '538a7a75-a555-4972-b766-2d08eb3f05bd' (Initial User: samename1)...
+2026-11-16 22:08:12,056 [INFO] automation.browser: Launching Chromium browser (headless=False)...
+2026-11-16 22:08:14,625 [INFO] automation.signup: Initiating registration assistance workflow at URL: https://accounts.google.com/signup
+2026-11-16 22:08:16,930 [INFO] automation.signup: [Step Loop 1] Detected page state: NAME (URL: https://accounts.google.com/lifecycle/steps/signup/name?dsh=S1679557727:1794847095660240&flowEntry=SignUp&flowName=GlifWebSignIn&TL=AAxq8nsE_u-WBLyjummavm9qCpqDWg_v_wk2nj8Rx-oVX-Z_vCVMaPHvDh6cPFEm&continue=https://accounts.google.com/ManageAccount?nc%3D1)
+2026-11-16 22:08:16,937 [INFO] automation.signup: Executing Step: NAME
+2026-11-16 22:08:18,440 [INFO] automation.signup: [Step Loop 2] Detected page state: BIRTHDAY_GENDER (URL: https://accounts.google.com/lifecycle/steps/signup/birthdaygender?TL=AAxq8nsE_u-WBLyjummavm9qCpqDWg_v_wk2nj8Rx-oVX-Z_vCVMaPHvDh6cPFEm&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S1679557727%3A1794847095660240&flowEntry=SignUp&flowName=GlifWebSignIn)
+2026-11-16 22:08:18,449 [INFO] automation.signup: Executing Step: BIRTHDAY_GENDER
+2026-11-16 22:08:23,467 [ERROR] automation.signup: BIRTHDAY_GENDER step never became active: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("#step-dob.active") to be visible
+
+2026-11-16 22:08:23,467 [ERROR] services.orchestrator: Unexpected error in orchestration workflow for job '538a7a75-a555-4972-b766-2d08eb3f05bd': BIRTHDAY_GENDER step not reachable
+Traceback (most recent call last):
+  File "D:\Vansh\projects\Email_automation\automation\signup.py", line 221, in handle_birthday_gender_step
+    await page.wait_for_selector('#step-dob.active', timeout=5000)
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\async_api\_generated.py", line 21255, in wait_for_selector
+    await self._impl_obj.wait_for_selector(
+    ...<4 lines>...
+    )
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\_impl\_page.py", line 431, in wait_for_selector
+    return await self._main_frame.wait_for_selector(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\_impl\_frame.py", line 395, in wait_for_selector
+    await self._channel.send(
+        "waitForSelector", self._timeout, locals_to_params(locals())
+    )
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\_impl\_connection.py", line 78, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\Vansh\projects\Email_automation\venv\Lib\site-packages\playwright\_impl\_connection.py", line 636, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("#step-dob.active") to be visible
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Vansh\projects\Email_automation\services\orchestrator.py", line 63, in run_orchestrated_workflow
+    signup_success = await run_signup(page, job, update_status)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Vansh\projects\Email_automation\automation\signup.py", line 701, in run_signup
+    await handle_birthday_gender_step(page, signup_input)
+  File "D:\Vansh\projects\Email_automation\automation\signup.py", line 225, in handle_birthday_gender_step
+    raise RuntimeError("BIRTHDAY_GENDER step not reachable")
+RuntimeError: BIRTHDAY_GENDER step not reachable
+2026-11-16 22:08:23,911 [INFO] automation.browser: Browser session resources released.
+2026-11-16 22:38:03,567 [INFO] EmailAutomation: Application shutting down...
